@@ -1,0 +1,3 @@
+C:/Users/User/Downloads/malrev_cpp_tool/malrev/build/CMakeFiles/malrev.dir
+C:/Users/User/Downloads/malrev_cpp_tool/malrev/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/User/Downloads/malrev_cpp_tool/malrev/build/CMakeFiles/ZERO_CHECK.dir

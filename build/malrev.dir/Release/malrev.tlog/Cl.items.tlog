@@ -1,0 +1,11 @@
+C:\Users\User\Downloads\malrev_cpp_tool\malrev\src\analysis\entropy.cpp;C:\Users\User\Downloads\malrev_cpp_tool\malrev\build\malrev.dir\Release\entropy.obj
+C:\Users\User\Downloads\malrev_cpp_tool\malrev\src\analysis\signature.cpp;C:\Users\User\Downloads\malrev_cpp_tool\malrev\build\malrev.dir\Release\signature.obj
+C:\Users\User\Downloads\malrev_cpp_tool\malrev\src\analysis\strings.cpp;C:\Users\User\Downloads\malrev_cpp_tool\malrev\build\malrev.dir\Release\strings.obj
+C:\Users\User\Downloads\malrev_cpp_tool\malrev\src\core\logger.cpp;C:\Users\User\Downloads\malrev_cpp_tool\malrev\build\malrev.dir\Release\logger.obj
+C:\Users\User\Downloads\malrev_cpp_tool\malrev\src\core\sha256.cpp;C:\Users\User\Downloads\malrev_cpp_tool\malrev\build\malrev.dir\Release\sha256.obj
+C:\Users\User\Downloads\malrev_cpp_tool\malrev\src\core\util.cpp;C:\Users\User\Downloads\malrev_cpp_tool\malrev\build\malrev.dir\Release\util.obj
+C:\Users\User\Downloads\malrev_cpp_tool\malrev\src\dynamic\ptrace_monitor.cpp;C:\Users\User\Downloads\malrev_cpp_tool\malrev\build\malrev.dir\Release\ptrace_monitor.obj
+C:\Users\User\Downloads\malrev_cpp_tool\malrev\src\main.cpp;C:\Users\User\Downloads\malrev_cpp_tool\malrev\build\malrev.dir\Release\main.obj
+C:\Users\User\Downloads\malrev_cpp_tool\malrev\src\parsers\elf.cpp;C:\Users\User\Downloads\malrev_cpp_tool\malrev\build\malrev.dir\Release\elf.obj
+C:\Users\User\Downloads\malrev_cpp_tool\malrev\src\parsers\pe.cpp;C:\Users\User\Downloads\malrev_cpp_tool\malrev\build\malrev.dir\Release\pe.obj
+C:\Users\User\Downloads\malrev_cpp_tool\malrev\src\report\report.cpp;C:\Users\User\Downloads\malrev_cpp_tool\malrev\build\malrev.dir\Release\report.obj

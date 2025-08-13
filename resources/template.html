@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>malrev report</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 2rem; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    h1 { margin-top: 0; }
+    code { background: #f6f8fa; padding: 2px 6px; border-radius: 6px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #eee; padding: .5rem; text-align: left; }
+    th { background: #fafafa; }
+    .muted { color: #666; }
+    .tag { display:inline-block; padding:2px 8px; border:1px solid #ccc; border-radius:999px; margin-right:6px; font-size:12px;}
+    pre { background: #0b1021; color: #d8d8d8; padding: 1rem; border-radius: 10px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>malrev report</h1>
+  <div class="muted">Generated: {{generated}}</div>
+  <div class="card">
+    <h2>Summary</h2>
+    <div id="summary"></div>
+  </div>
+  <div class="card">
+    <h2>Static Analysis</h2>
+    <div id="static"></div>
+  </div>
+  <div class="card">
+    <h2>Dynamic Analysis</h2>
+    <div id="dynamic"></div>
+  </div>
+  <div class="card">
+    <h2>Strings (preview)</h2>
+    <pre id="strings"></pre>
+  </div>
+  <script>
+    // naive client-side render: replace placeholders with embedded JSON blob
+    const data = JSON.parse(document.getElementById('data').textContent);
+    function esc(s){return (''+s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+
+    document.getElementById('summary').innerHTML =
+      `<div><span class="tag">${esc(data.file.type||'unknown')}</span>
+           <span class="tag">${esc(data.file.size_bytes)} bytes</span>
+           <span class="tag">sha256:${esc(data.hashes.sha256)}</span></div>
+       <div class="muted">path: <code>${esc(data.file.path)}</code></div>`;
+
+    document.getElementById('static').innerHTML =
+      `<pre>${esc(JSON.stringify(data.static, null, 2))}</pre>`;
+
+    document.getElementById('dynamic').innerHTML =
+      data.dynamic && data.dynamic.events && data.dynamic.events.length
+        ? `<pre>${esc(JSON.stringify(data.dynamic, null, 2))}</pre>`
+        : `<div class="muted">No dynamic data (not run or no events).</div>`;
+
+    const preview = (data.strings || []).slice(0, 100).join("\\n");
+    document.getElementById('strings').textContent = preview;
+  </script>
+  <script type="application/json" id="data">{{json_blob}}</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "MZ header",
+    "category": "pe",
+    "hex": "4D 5A"
+  },
+  {
+    "name": "ELF header",
+    "category": "elf",
+    "hex": "7F 45 4C 46"
+  },
+  {
+    "name": "UPX",
+    "category": "packer",
+    "hex": "55 50 58 21"
+  }
+]
